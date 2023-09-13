@@ -24,7 +24,7 @@
 		/*full path to intro / outro video*/
 		var missionVideoPath = videoRoot+"introVideo/intro1.mp4" ;
 		var introVideoPath = videoRoot+"introVideo/intro2.mp4" ;
-		var missingVideoPath = videoRoot+"contactVideo/missing/final.mp4" ;
+		var missingVideoPath = videoRoot+"contactVideo2/Isaac/final.mp4" ;
 		var epilogueVideoPath = videoRoot+"epilogueVideo/epiloguecredit.mp4" ;
 
 		/*udisk JSON path*/
@@ -35,31 +35,6 @@
 		var udiskJSONPath = "/helper_scripts/accessJSON_udisk.php" ;*/
 
 
-		// var udiskData =
-	  	// {"root":{
-	  	// 	"folders":
-		//   		[
-		//   		{"foldername":"gaming",
-		// 		  	"files":["20190509_316504.mp4"]
-		// 		},
-		// 		{"foldername":"vieillescartespostales",
-		// 				"files":["carte1.jpg", "carte2.jpg", "carte3.jpg", "carte4.jpg"]
-		// 		},
-		// 		{"foldername":"dcim","password":"forclaz","sequence":1,
-		// 	  		"files":["20180807_103031.jpg", "20180807_114356.jpg", "20180807_123538.mp4"]
-		// 	  	},
-		// 	  	{"foldername":"itineraire2018",
-		// 	  		"folders":[{"foldername":"perso", "files":["FXHT4438a.jpg","Screenshot20180701_Wanderplaner(1).jpg"],"password":"nata","sequence":0}]
-		// 	  	},
-		// 	  	{"foldername":"itineraire2019", "password":"trient","sequence":2,
-		// 	  		"files":["fortnitescreen.png", "swisstopo-screen.png"],
-		// 	  		"folders":[{"foldername":"GPS", "files":["idgps.png"],"password":"wandfluehorn","sequence":3}]
-		// 	  	}
-		//  		],
-		// 	"files":[
-		// 		"scan_memo.png"]}
-		// } ;
-
 		var udiskData =
 		{"root":{
 			"folders":
@@ -69,7 +44,6 @@
 					"folders":[	{"foldername":"Buffet", "files":["Tract Jeanne.png"]}
 				]
 				},
-
 
 				{"foldername":"Cabinet","password":"78443","sequence":0, "helptext":"Fermé par un cadenas 5 chiffres", //Pour l'instant c'est un mdp mais il faut que ça se dévérouille tout seul avec la clef
 						"files":["Tableau piece.png", "Tableau reunion.png", "tapis.png"],

@@ -293,8 +293,34 @@ function cFolder(name, parent, password, seqNumber, helpText){
 	if(password != ""){
 		elemA.classList.add("protected-name") ;
 		elemA.setAttribute("onclick", "openPasswordPrompt('"+name+"', '"+helpText+"')") ;
+
+		//Check if folder has a specific icon and applies it. If not, applies the default folder icon
+		var img = new Image();
+		img.src = "escaposaurus_examplegamedata/img/" + name + ".png";
+
+		img.onerror = function () { // Failed to load
+			console.log("failed");
+			elemA.setAttribute("style", "background : url('escaposaurus_examplegamedata/img/iconPassword.png')left center no-repeat");
+		};
+		img.onload = function () { // Loaded successfully
+			console.log("success for : " + name);
+			elemA.setAttribute("style", "background : url('escaposaurus_examplegamedata/img/" + name + ".png')left center no-repeat");
+		};
 	}else{
 		elemA.classList.add("folder-name") ;
+
+		//Check if folder has a specific icon and applies it. If not, applies the default folder icon
+		var img = new Image();
+		img.src = "escaposaurus_examplegamedata/img/"+ name + ".png";
+		
+		img.onerror = function(){ // Failed to load
+			console.log("failed");
+			elemA.setAttribute("style", "background : url('escaposaurus_examplegamedata/img/iconFolder.png')left center no-repeat") ;
+		};
+		img.onload = function(){ // Loaded successfully
+			console.log("success for : " + name);
+			elemA.setAttribute("style", "background : url('escaposaurus_examplegamedata/img/"+ name +".png')left center no-repeat") ;
+		};
 	}
 
 	elemA.id = name+"sp" ;
@@ -321,7 +347,28 @@ function cFile(name, parent, fullPath){
 
 	var elemA = document.createElement('a') ;
 	elemA.classList.add("file-name") ;
+
 	elemA.href = udiskRoot+fullPath+name ;
+
+	// if (CheckFileExists("escaposaurus_examplegamedata/img/"+ name)) {
+	// 	elemA.setAttribute("style", "background : url('escaposaurus_examplegamedata/img/"+ name +"')left center no-repeat") ;	
+	// } else {
+	// 	elemA.setAttribute("style", "background : url('escaposaurus_examplegamedata/img/iconFile.png')left center no-repeat") ;
+	// }
+
+	//Check if file has a specific icon and applies it. If not, applies the default file icon
+	var img = new Image();
+	img.src = "escaposaurus_examplegamedata/img/"+ name;
+	
+	img.onerror = function(){ // Failed to load
+		console.log("failed");
+		elemA.setAttribute("style", "background : url('escaposaurus_examplegamedata/img/iconFile.png')left center no-repeat") ;
+	};
+	img.onload = function(){ // Loaded successfully
+		console.log("success for : " + name);
+		elemA.setAttribute("style", "background : url('escaposaurus_examplegamedata/img/"+ name +"')left center no-repeat") ;
+	};
+	
 	elemA.setAttribute("data-lightbox", "") ;
 	elemA.setAttribute("data-image-alt", "name") ;
 	elemA.innerHTML = name ;
@@ -408,6 +455,20 @@ function unlockFolder(unlockedFolder){
 	var x = document.getElementById(unlockedFolder+"sp") ;
 	x.classList.remove("protected-name") ;
 	x.classList.add("folder-name") ;
+
+	
+	//Check if folder has a specific icon and applies it. If not, applies the default folder icon
+	var img = new Image();
+	img.src = "escaposaurus_examplegamedata/img/" + unlockedFolder + ".png";
+
+	img.onerror = function () { // Failed to load
+		console.log("failed");
+		x.setAttribute("style", "background : url('escaposaurus_examplegamedata/img/iconFolder.png')left center no-repeat");
+	};
+	img.onload = function () { // Loaded successfully
+		console.log("success for : " + unlockedFolder);
+		x.setAttribute("style", "background : url('escaposaurus_examplegamedata/img/" + unlockedFolder + "Unlocked.png')left center no-repeat");
+	};
 
 	var y = document.getElementById(unlockedFolder+"ul") ;
 	y.classList.remove("hidden") ;
@@ -538,7 +599,7 @@ function openVideoWindow(vid, vid_folder, classname){
 	}else if(vid == "epilogue"){
 		title = titleData.epilogueTitle ;
 		src = epilogueVideoPath ;
-	}else if(vid == "missing"){
+	}else if(vid == "Isaac"){
 		title = titleData.callTitle ;
 		src = missingVideoPath ;
 
@@ -643,6 +704,7 @@ function changingSequence(){
 function win(){
 	winState = true ;
 	openIt("newContact-window") ;
+	mainHintFound =true;
 	/*removing existing stuff*/
 	var nc = document.getElementById("normal-contact") ;
 	while (nc.firstChild) {
@@ -676,7 +738,7 @@ var callbackCloseMissingCall = function(){
 	var cl = document.getElementById("btn-closecall") ;
 	cl.removeEventListener("click", callbackCloseMissingCall) ;
 	setTimeout(function () {
-		openIt('calling-window') ;
+		openIt('steal-window') ;
 	},1000);
 }
 
@@ -729,3 +791,15 @@ function solutionClose(iid, spid, spwin){
 	sp.innerHTML = "" ;
 	closeIt(spwin) ;
 }
+
+// function CheckFileExists(path) {
+// 	var img = new Image();
+// 	img.src = "path";
+
+// 	img.onerror = function () { // Failed to load
+// 		return false;
+// 	};
+// 	img.onload = function () { // Loaded successfully
+// 		return true;
+// 	};
+// }
