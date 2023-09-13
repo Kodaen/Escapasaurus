@@ -105,7 +105,7 @@
 							<div>
 								<ul id="rootul" name="rootul">
 								  <li class="rootLI">
-								    Root
+								    Mensarde
 								  </li>
 								</ul>
 							</div>
@@ -116,7 +116,7 @@
 		</div>
 
 		<div id="footer"><button class="footer-button" onclick="openIt('overlay-index')">Revoir page introduction</button>
-			<button class="footer-button" onclick="openVideoWindow('introBis')">Revoir premier appel reçu</button>
+			<button class="footer-button" onclick="openVideoWindow('introBis')">Revoir la lettre de Isaac</button>
 			<button id="button-outro" class="footer-button hidden" onclick="openVideoWindow('epilogue')">Revoir vidéo générique</button>
 			<button class="footer-button" onclick="openIt('solution-window')">Aide &amp; solutions</button>
 			<button class="footer-button" onclick="openIt('credit-window')">Crédits</button></div>
@@ -153,10 +153,10 @@
 
 	<!-- WRONG PASSWORD MSG -->
 		<div id="wrongPassword" class="hidden">
-			<div class="app-title"><span class="app-title-span">:(</span></div>
+			<div class="app-title"><span class="app-title-span">Echec</span></div>
 			<div class="message-content">
 				<br/>
-				Mauvais mot de passe<br/>
+				Cela ne mène à rien...<br/>
 				<br/>
 				<button class="window-btn" onclick="closeWrongPassword()">OK</button>
 			</div>
@@ -175,13 +175,17 @@
 
 	<!-- APPEL ENTRANT -->
 	<div id="calling-window" class="hidden">
-		<div class="app-title"><span class="app-title-span">APPEL ENTRANT</span></div>
+		<div class="app-title"><span class="app-title-span">ARRIVEE SUR LA SCENE DE CRIME</span></div>
 		<div class="message-content">
 			<img id="callerIMG" />
-			<br/>
-			Appel entrant...<br/>
-			<br/>
-			<button class="window-btn" onclick="closeAppelEntrant('calling-window')">Répondre</button>
+			<p>
+				<br/>
+				Alors que entrez dans la mensarde de Jeanne<br/>
+				Vous appercevez son corps innerte au sol...<br/>
+				<br/>
+				Une lettre retient votre attention.
+			</p>
+			<button class="window-btn" onclick="closeAppelEntrant('calling-window')">Lire la lettre</button>
 		</div>
 	</div>
 

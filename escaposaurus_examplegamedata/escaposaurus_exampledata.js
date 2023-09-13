@@ -66,24 +66,24 @@
 		var gameCredit = "Un jeu conçu et réalisé par : <br/>Tristan Badana<br/>Gaïa Broilliard<br/>Léa Docteur<br/>Frédéric Kukovicic<br/>Gabrielle Laty<br/>Margot Thetiot" ; 
 		var gameThanks = "Remerciements : <br/> ;)" ;
 
-		var OSName = "Special InformaticienOS 3.11- diskloaded: Escaposaurus_Example" ;
-		var explorerName = "USB DISK EXPLORER" ;
-		var callerAppName = "CALL CONTACT" ;
+		var OSName = "_" ;
+		var explorerName = "MAISON DE JEANNE" ;
+		var callerAppName = "PARLER" ;
 
 		/*titles of video windows*/
 		var titleData = {} ;
 		titleData.introTitle = "INTRODUCTION" ;
 		titleData.epilogueTitle = "EPILOGUE" ;
-		titleData.callTitle = "Quelqu'un vous interpelle" ;
+		titleData.callTitle = "Vous interpellez quelqu'un." ;
 
 		/*change of caller app prompt for each sequence*/
-		var promptDefault = "Vous observe sans bouger" ;
+		var promptDefault = "Vous observe sans bouger." ;
 		var prompt = [] ;
-		prompt[0] = "souhaitent vous parler" ;
-		prompt[1] = "" ;
-		prompt[2] = "" ;
-		prompt[3] = "" ;
-		prompt[4] = "" ;
+		prompt[0] = "Souhaitent vous parler" ;
+		prompt[1] = "Souhaitent vous parler" ;
+		prompt[2] = "Souhaitent vous parler" ;
+		prompt[3] = "Souhaitent vous parler" ;
+		prompt[4] = "Souhaitent vous parler" ;
 
 		/*when the sequence number reach this, the player win, the missing contact is added and the player can call them*/
 		var sequenceWin = 3 ;
@@ -123,10 +123,10 @@
 		/*Lou only send text message, they are stored here*/
 		var tips = {} ;
 		tips['Albert'] = [] ;
-		tips['Albert'][0] = "Je peux pas répondre à votre appel. Mais je peux vous répondre par écrit. Donc vous cherchez le surnom d'un guide ? Je crois que les contacts sont des guides justement, essayez peut-être de les appeler." ;
+		tips['Albert'][0] = "" ;
 		tips['Albert'][1] = "" ;
 		tips['Albert'][2] = "" ;
-		tips['Albert'][3] = "Ah zut, un dossier verouillé sans infos dans scan mémo ? Y'a forcément un truc mnémotechnique facile à retenir ou retrouver. Les guides en disent quoi ?" ;
+		tips['Albert'][3] = "" ;
 
 
 		/*text for the instruction / solution windows*/
@@ -137,6 +137,6 @@
 
 		/*please note the %s into the text that allow to automatically replace them with the right content according to which sequence the player is in*/
 		var solutionText = {} ;
-		solutionText.winState = "Si Sabine a été secourue, le jeu est fini bravo." ;
-		solutionText.lackMainHint = "Vous devez ouvrir le fichier <b>%s</b><br/>" ;
-		solutionText.password = "Vous devez déverouiller le dossier <b>%s1</b><br/>avec le mot de passe : <b>%s2</b><br/>" ;
+		solutionText.winState = "Si vous résolvez le meurtre et que vous retrouvez le document de Jeanne, le jeu est fini bravo." ;
+		solutionText.lackMainHint = "Vous devez inspecter l'objet <b>%s</b><br/>" ;
+		solutionText.password = "Vous devez déverouiller l'élément <b>%s1</b><br/>avec le mot de passe : <b>%s2</b><br/>" ;
