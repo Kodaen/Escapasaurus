@@ -121,7 +121,7 @@
 		seqMainHint[0] = "noHint" ;
 		seqMainHint[1] = "Article%20journal.png" ; /*if you put anything that is not an existing filename of the udisk, the player will never be able to call any contacts or get helps during this sequence*/
 		seqMainHint[2] = "noHint" ;
-		//seqMainHint[3] = "swisstopo-screen.png" ;
+		seqMainHint[3] = "noHint" ;
 
 		/*contact list, vid is the name of their folder in the videoContact folder, then the game autoload the video named seq%number of the current sequence%, e.g. seq0.MP4 for the first sequence (numbered 0 because computer science habits)
 	their img need to be placed in their video folder, username is their displayed name
@@ -144,7 +144,7 @@
 		finalStepAdded = "Vous allez à l'Eglise et retrouvez Isaac." ;
 
 		/*the last call, it can be the person we find in the end or anyone else we call to end the quest, allows the game to know it is the final contact that is called and to proceed with the ending*/
-		var missingContact = {"vid" : "missing", "vod_folder" : "","username" : "Nathalie",  "canal" : "video", "avatar" : "nata_avatar.jpg"} ;
+		var missingContact = {"vid" : "Isaac", "vod_folder" : "", "username" : "Isaac (marie)", "canal" : "video", "avatar" : "Isaac.jpg"} ;
 
 		/*Lou only send text message, they are stored here*/
 		var tips = {} ;

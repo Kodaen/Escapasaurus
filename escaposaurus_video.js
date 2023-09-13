@@ -128,7 +128,6 @@ function loadGame(folders, files, overlay){
 
 	//Hard coded
 	var hiddenArticle = document.getElementById("Article journal.png");
-	console.log(hiddenArticle);
 	hiddenArticle.style.contentVisibility = "hidden";
 }
 
@@ -172,13 +171,11 @@ var callbackClicHint = function(evt){
 				break;
 
 				case "Tableau%20piece.png":
-					console.log("Piece")
 					if (HintFound == true) {
 						MainHintFound = true;
 					}
 					HintFound = true;
 					var hiddenArticle = document.getElementById("Article journal.png");
-					console.log(hiddenArticle);
 					hiddenArticle.style.contentVisibility = "visible";
 					break;
 
