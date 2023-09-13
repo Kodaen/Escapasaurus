@@ -118,7 +118,7 @@ function loadGame(folders, files, overlay){
     /*faudra juste faire un message, call entrant, puis ok qui ouvre cette vidéo*/
     setTimeout(function () {
 		openIt('calling-window') ;
-	},500);
+	},200);
 
 	//Fix for having "noHint" as the first seqMainHint
 	if(seqMainHint[sequenceNumber] == "noHint"){
@@ -126,7 +126,7 @@ function loadGame(folders, files, overlay){
 		unlockContacts() ;
 	}
 
-	//Hard coded
+	//Hard coded because why not
 	var hiddenArticle = document.getElementById("Article journal.png");
 	hiddenArticle.style.contentVisibility = "hidden";
 }
@@ -739,7 +739,7 @@ var callbackCloseMissingCall = function(){
 	cl.removeEventListener("click", callbackCloseMissingCall) ;
 	setTimeout(function () {
 		openIt('steal-window') ;
-	},1000);
+	},100);
 }
 
 function openEpilogue(){
@@ -748,7 +748,7 @@ function openEpilogue(){
 		var x = document.getElementById('button-outro');
 		x.style.animation = [animation.scaleIn, animation.fadeIn];
 		x.classList.remove('hidden');
-	},1000);
+	},10);
 }
 
 /* HELP AND SOLUTION BOX */
