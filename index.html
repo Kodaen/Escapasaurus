@@ -130,9 +130,10 @@
 	</div>
 	<!--PASSWORD CAN'T UNLOCK NOW-->
 		<div id="notnowPrompt-window" class="hidden">
-			<div class="app-title"><span class="app-title-span">PROTEGE</span></div>
+			<div class="app-title"><span class="app-title-span">ACTION IMPOSSIBLE</span></div>
 			<div class="message-content">
-				Le dossier <span id="folderN"></span> ne peut être déverouillé pour le moment<br/>
+				Vous avez autre chose à faire avant de vous intéresser à cela<br/>
+				<span id="folderN" style="display: none;"></span>
 				<button class="window-btn" onclick="closeIt('notnowPrompt-window')">OK</button>
 			</div>
 		</div>
@@ -142,7 +143,7 @@
 			<div class="app-title"><span class="app-title-span">PROTEGE</span></div>
 			<div class="message-content">
 				Ouvrir : <span id="folderD"></span><br/>
-				<span id="folderHelp"></span><br/>
+				<span id="folderHelp"></span><br/><br/>
 				<input id="passwordInput" name="passwordInput" type="text" placeholder="mot de passe" value="" autocomplete="off" onkeypress="checkIfEnter(event, passwordInput.value, folderInput.value)" />
 				<input id="folderInput" name="folderInput" type="hidden" value="0" />
 				<button class="window-btn" onclick="checkPassword(passwordInput.value, folderInput.value)">OK</button>
@@ -153,7 +154,7 @@
 
 	<!-- WRONG PASSWORD MSG -->
 		<div id="wrongPassword" class="hidden">
-			<div class="app-title"><span class="app-title-span">Echec</span></div>
+			<div class="app-title"><span class="app-title-span">ECHEC</span></div>
 			<div class="message-content">
 				<br/>
 				Cela ne mène à rien...<br/>
