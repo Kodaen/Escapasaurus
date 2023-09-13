@@ -177,6 +177,7 @@ var callbackClicHint = function(evt){
 
 			default:
 				mainHintFound = true ;
+				unlockContacts();
 				break;
 		}
 	}
@@ -212,6 +213,10 @@ function lockContacts(){
 	for(var i = 0 ; i < z.length ; i++){
 		z[i].classList.add("no-call") ;
 		z[i].classList.remove("already-called") ;
+
+		var tempOnClickFunc = z[i].getAttribute("onclick");
+		tempOnClickFunc = tempOnClickFunc.replace("callable", "no-call");
+		z[i].setAttribute("onclick",tempOnClickFunc) ;
 	}
 }
 
