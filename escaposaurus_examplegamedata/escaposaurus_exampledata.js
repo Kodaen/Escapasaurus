@@ -64,23 +64,20 @@
 		{"root":{
 			"folders":
 				[
-
-
 				{"foldername":"Salon",
 					"files":["Tableau cloche.png", "Tableau Louis XVI.png"],
-					"folders":[	{"foldername":"Buffet", "files":["Tract Jeanne.png"]},
-								{"foldername":"Coffre", "files":["Clef.png"],"password":"78443","sequence":0},
+					"folders":[	{"foldername":"Buffet", "files":["Tract Jeanne.png"]}
 				]
 				},
 
 
-				{"foldername":"Cabinet","password":"CLEF","sequence":1, //Pour l'instant c'est un mdp mais il faut que ça se dévérouille tout seul avec la clef
+				{"foldername":"Cabinet","password":"78443","sequence":0, //Pour l'instant c'est un mdp mais il faut que ça se dévérouille tout seul avec la clef
 						"files":["Tableau piece.png", "Tableau reunion.png", "tapis.png"],
 						"folders":[	{"foldername":"Bibliothèque", "files":["Article journal.png", "Tract anti revolutionnaire.png"]},
 									{"foldername":"Bureau", "files":["Cheque.png", "Livre code.png"]},
-									{"foldername":"Coffre fort", "password":"110775","sequence":2, "files":["Agenda.png", "Carte Paris.png", "Coffre fort.jpg", "livre de compte.png", "LETTRE-GOURGUECHON.mp4"]}]
+									{"foldername":"Coffre fort", "password":"110775","sequence":1, "files":["Agenda.png", "Carte Paris.png", "Coffre fort.jpg", "livre de compte.png", "LETTRE-GOURGUECHON.mp4"]}]
 				},
-				{"foldername" :"Sortie","password":"EGLISE","sequence":3, "files":"","folders":""}
+				{"foldername" :"Sortie","password":"EGLISE","sequence":2, "files":"","folders":""}
 			   ],
 			
 			"files":""}
@@ -115,14 +112,14 @@
 		prompt[4] = "" ;
 
 		/*when the sequence number reach this, the player win, the missing contact is added and the player can call them*/
-		var sequenceWin = 4 ;
+		var sequenceWin = 3 ;
 
 		/*before being able to call the contacts, the player has to open the main clue of the sequence as indicated in this array*/
 		/*if you put in the string "noHint", player will be able to immediatly call the contact at the beginning of the sequence*/
 		/*if you put "none" or anything that is not an existing filename, the player will NOT be able to call the contacts during this sequence*/
 		var seqMainHint = [] ;
-		seqMainHint[0] = "scan_memo.png" ;
-		seqMainHint[1] = "aucun" ; /*if you put anything that is not an existing filename of the udisk, the player will never be able to call any contacts or get helps during this sequence*/
+		seqMainHint[0] = "noHint" ;
+		seqMainHint[1] = "none" ; /*if you put anything that is not an existing filename of the udisk, the player will never be able to call any contacts or get helps during this sequence*/
 		seqMainHint[2] = "aucun" ;
 		seqMainHint[3] = "swisstopo-screen.png" ;
 
@@ -132,7 +129,8 @@
 		var normalContacts = [] ;
 		normalContacts[0] = {"vid" : "Madeleine", "vod_folder" : "", "username" : "Madeleine (club)", "canal" : "video", "avatar" : "Madeleine.jpg"} ;
 		normalContacts[1] = {"vid" : "Marie", "vod_folder" : "", "username" : "Marie (club)", "canal" : "video", "avatar" : "Marie.jpg"} ;
-		normalContacts[2] = {"vid" : "Isaac", "vod_folder" : "", "username" : "Isaac (marie)", "canal" : "video", "avatar" : "Isaac.jpg"} ;
+		// normalContacts[2] = {"vid" : "Isaac", "vod_folder" : "", "username" : "Isaac (marie)", "canal" : "video", "avatar" : "Isaac.jpg"} ;
+		
 		// normalContacts[0] = {"vid" : "Denise", "vod_folder" : "", "username" : "Denise (guide)", "canal" : "video", "avatar" : "denise_avatar.jpg"} ;
 		// normalContacts[1] = {"vid" : "Nathalie", "vod_folder" : "", "username" : "Nathalie (guide)", "canal" : "video", "avatar" : "nata_avatar.jpg"} ;
 
@@ -143,7 +141,7 @@
 
 
 		/*ce qui apparait quand on trouve le dernier élément du disque dur*/
-		finalStepAdded = "Vous allez à l'Eglise, et retrouvez Isaac." ;
+		finalStepAdded = "Vous allez à l'Eglise et retrouvez Isaac." ;
 
 		/*the last call, it can be the person we find in the end or anyone else we call to end the quest, allows the game to know it is the final contact that is called and to proceed with the ending*/
 		var missingContact = {"vid" : "missing", "vod_folder" : "","username" : "Nathalie",  "canal" : "video", "avatar" : "nata_avatar.jpg"} ;

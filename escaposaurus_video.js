@@ -119,6 +119,12 @@ function loadGame(folders, files, overlay){
     setTimeout(function () {
 		openIt('calling-window') ;
 	},500);
+
+	//Fix for having "noHint" as the first seqMainHint
+	if(seqMainHint[sequenceNumber] == "noHint"){
+		mainHintFound = true ;
+		unlockContacts() ;
+	}
 }
 
 
@@ -135,9 +141,36 @@ function addListenerToLink(){
 
 var callbackClicHint = function(evt){
 	var fn = evt.target.href.substring(evt.target.href.lastIndexOf('/')+1);
+	console.log(fn);
+	var HintFound;
 	if(fn == seqMainHint[sequenceNumber]){
-		mainHintFound = true ;
-		unlockContacts() ;
+		switch (fn) {
+			case "Article journal.png":
+				if (HintFound == true) {
+					MainHintFound = true;
+				}
+				HintFound = true;
+				unlockSpecificContact(0);
+				break;
+
+			case "Truc.png":
+				if (HintFound == true) {
+					MainHintFound = true;
+				}
+				HintFound = true;
+				unlockSpecificContact(1);
+				break;
+
+			default:
+				MainHintFound = true ;
+				break;
+		}
+		if (fn == 0) {
+			unlockSpecificContact(0);
+		} else {
+			unlockContacts() ;
+		}
+		
 	}
 }
 
@@ -149,6 +182,14 @@ function unlockContacts(){
 	for(var i = 0 ; i < z.length ; i++){
 		z[i].classList.remove("no-call") ;
 	}
+}
+
+function unlockSpecificContact(contactNum){
+	var p = document.getElementById("callApp-prompt") ;
+	p.innerHTML = prompt[sequenceNumber] ;
+
+	var z = document.getElementsByClassName('contact-div') ;
+	z[contactNum].classList.remove("no-call") ;
 }
 
 function lockContacts(){
