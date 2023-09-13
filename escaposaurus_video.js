@@ -163,7 +163,7 @@ var callbackClicHint = function(evt){
 		switch (fn) {
 			case "Article%20journal.png":
 				mainHintFound = true;
-				unlockSpecificContact(0);
+				unlockSpecificContact(1);
 				break;
 
 				case "Tableau%20piece.png":
@@ -172,7 +172,7 @@ var callbackClicHint = function(evt){
 					break;
 
 				case "Coffre fortsp":
-					unlockSpecificContact(1);
+					unlockSpecificContact(0);
 					break;
 
 			default:
@@ -245,7 +245,8 @@ function arborescence(folders, files, parent, fullpath){
 		    //console.log("a folder" + obj.foldername) ;
 		    var password = (obj.password == undefined)?"":obj.password;
 		    var seqNumber = (obj.password == undefined)?"":obj.sequence;
-		    cFolder(obj.foldername, parent, password, seqNumber) ;
+			var helpText = (obj.password == undefined)?"":obj.helptext;
+		    cFolder(obj.foldername, parent, password, seqNumber, helpText) ;
 
 		    var fo = (obj.folders == undefined)?null:obj.folders ;
 		 	var fi = (obj.files == undefined)?null:obj.files ;
@@ -265,7 +266,7 @@ function arborescence(folders, files, parent, fullpath){
 }
 
 /*folder routine HTML*/
-function cFolder(name, parent, password, seqNumber){
+function cFolder(name, parent, password, seqNumber, helpText){
 	passwordCenter[name] = password ;
 	if(password != null){
 		sequenceFolder[seqNumber] = name ;
@@ -286,7 +287,7 @@ function cFolder(name, parent, password, seqNumber){
 	var elemA = document.createElement('a') ;
 	if(password != ""){
 		elemA.classList.add("protected-name") ;
-		elemA.setAttribute("onclick", "openPasswordPrompt('"+name+"')") ;
+		elemA.setAttribute("onclick", "openPasswordPrompt('"+name+"', '"+helpText+"')") ;
 	}else{
 		elemA.classList.add("folder-name") ;
 	}
@@ -453,7 +454,7 @@ function checkPassword(userTry, foldername){
 	}
 }
 
-function openPasswordPrompt(foldername){
+function openPasswordPrompt(foldername, helpText){
 	/*if the not now prompt is open, we close it*/
 	var p = document.getElementById("notnowPrompt-window") ;
 	if(!p.classList.contains('hidden')){
@@ -469,6 +470,9 @@ function openPasswordPrompt(foldername){
 
 		var d = document.getElementById("folderD") ;
 		d.innerHTML = foldername ;
+
+		var h = document.getElementById("folderHelp") ;
+		h.innerHTML = helpText;
 
 		var p = document.getElementById("passPrompt-window") ;
 		p.classList.remove("hidden") ;

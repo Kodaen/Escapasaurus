@@ -71,13 +71,13 @@
 				},
 
 
-				{"foldername":"Cabinet","password":"78443","sequence":0, //Pour l'instant c'est un mdp mais il faut que ça se dévérouille tout seul avec la clef
+				{"foldername":"Cabinet","password":"78443","sequence":0, "helptext":"Fermé par un cadenas 5 chiffres", //Pour l'instant c'est un mdp mais il faut que ça se dévérouille tout seul avec la clef
 						"files":["Tableau piece.png", "Tableau reunion.png", "tapis.png"],
 						"folders":[	{"foldername":"Bibliothèque", "files":["Article journal.png", "Tract anti revolutionnaire.png"]},
 									{"foldername":"Bureau", "files":["Cheque.png", "Livre code.png"]},
-									{"foldername":"Coffre fort", "password":"110775","sequence":1, "files":["Agenda.png", "Carte Paris.png", "Coffre fort.jpg", "livre de compte.png", "LETTRE-GOURGUECHON.mp4"]}]
+									{"foldername":"Coffre fort", "password":"110775","sequence":1,"helptext":"Fermé par un cadenas 6 chiffres", "files":["Agenda.png", "Carte Paris.png", "Coffre fort.jpg", "livre de compte.png", "LETTRE-GOURGUECHON.mp4"]}]
 				},
-				{"foldername" :"Sortie","password":"EGLISE","sequence":2, "files":"","folders":""}
+				{"foldername" :"Sortie","password":"EGLISE","sequence":2, "helptext" : "Où voulez vous partir ?","files":"","folders":""}
 			   ],
 			
 			"files":""}
@@ -120,7 +120,7 @@
 		var seqMainHint = [] ;
 		seqMainHint[0] = "noHint" ;
 		seqMainHint[1] = "Article%20journal.png" ; /*if you put anything that is not an existing filename of the udisk, the player will never be able to call any contacts or get helps during this sequence*/
-		seqMainHint[2] = "noHint" ;
+		seqMainHint[2] = "Agenda.png" ;
 		seqMainHint[3] = "noHint" ;
 
 		/*contact list, vid is the name of their folder in the videoContact folder, then the game autoload the video named seq%number of the current sequence%, e.g. seq0.MP4 for the first sequence (numbered 0 because computer science habits)
