@@ -125,11 +125,17 @@ function loadGame(folders, files, overlay){
 		mainHintFound = true ;
 		unlockContacts() ;
 	}
+
+	//Hard coded
+	var hiddenArticle = document.getElementById("Article journal.png");
+	console.log(hiddenArticle);
+	hiddenArticle.style.contentVisibility = "hidden";
 }
 
 
 /*find files that are hint and add listener so a callback is called when they are opened to allow the game to proceed and unlock the contact*/
 function addListenerToLink(){
+	//For files.
 	var z = document.getElementsByClassName('file-name') ;
 	for(var i = 0 ; i < z.length ; i++){
 		var fn = z[i].href.substring(z[i].href.lastIndexOf('/')+1);
@@ -137,15 +143,27 @@ function addListenerToLink(){
 			z[i].addEventListener("click", callbackClicHint) ;
 		}
 	}
+	//Hard coded for gaining time
+	var a = document.getElementById('Coffre fortsp');
+	a.addEventListener("click", callbackClicHint) ;
+
+	var piece = document.getElementById('Tableau piece.png');
+	piece.addEventListener("click", callbackClicHint) ;
 }
 
 var callbackClicHint = function(evt){
 	var fn = evt.target.href.substring(evt.target.href.lastIndexOf('/')+1);
-	console.log(fn);
+	console.log("fn : " + fn);
 	var HintFound;
-	if(fn == seqMainHint[sequenceNumber]){
+
+	if (fn == ""){
+		fn = evt.target.id;
+		console.log("fn : " + fn);
+	}
+
+	if(fn == seqMainHint[sequenceNumber] || fn == "Coffre fortsp" || fn == "Tableau%20piece.png"){
 		switch (fn) {
-			case "Article journal.png":
+			case "Article%20journal.png":
 				if (HintFound == true) {
 					MainHintFound = true;
 				}
@@ -153,24 +171,29 @@ var callbackClicHint = function(evt){
 				unlockSpecificContact(0);
 				break;
 
-			case "Truc.png":
-				if (HintFound == true) {
-					MainHintFound = true;
-				}
-				HintFound = true;
-				unlockSpecificContact(1);
-				break;
+				case "Tableau%20piece.png":
+					console.log("Piece")
+					if (HintFound == true) {
+						MainHintFound = true;
+					}
+					HintFound = true;
+					var hiddenArticle = document.getElementById("Article journal.png");
+					console.log(hiddenArticle);
+					hiddenArticle.style.contentVisibility = "visible";
+					break;
+
+				case "Coffre fortsp":
+					if (HintFound == true) {
+						MainHintFound = true;
+					}
+					HintFound = true;
+					unlockSpecificContact(1);
+					break;
 
 			default:
 				MainHintFound = true ;
 				break;
 		}
-		if (fn == 0) {
-			unlockSpecificContact(0);
-		} else {
-			unlockContacts() ;
-		}
-		
 	}
 }
 
