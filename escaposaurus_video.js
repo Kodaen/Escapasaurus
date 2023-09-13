@@ -153,7 +153,6 @@ function addListenerToLink(){
 var callbackClicHint = function(evt){
 	var fn = evt.target.href.substring(evt.target.href.lastIndexOf('/')+1);
 	console.log("fn : " + fn);
-	var HintFound;
 
 	if (fn == ""){
 		fn = evt.target.id;
@@ -163,32 +162,21 @@ var callbackClicHint = function(evt){
 	if(fn == seqMainHint[sequenceNumber] || fn == "Coffre fortsp" || fn == "Tableau%20piece.png"){
 		switch (fn) {
 			case "Article%20journal.png":
-				if (HintFound == true) {
-					MainHintFound = true;
-				}
-				HintFound = true;
+				mainHintFound = true;
 				unlockSpecificContact(0);
 				break;
 
 				case "Tableau%20piece.png":
-					if (HintFound == true) {
-						MainHintFound = true;
-					}
-					HintFound = true;
 					var hiddenArticle = document.getElementById("Article journal.png");
 					hiddenArticle.style.contentVisibility = "visible";
 					break;
 
 				case "Coffre fortsp":
-					if (HintFound == true) {
-						MainHintFound = true;
-					}
-					HintFound = true;
 					unlockSpecificContact(1);
 					break;
 
 			default:
-				MainHintFound = true ;
+				mainHintFound = true ;
 				break;
 		}
 	}
@@ -210,6 +198,10 @@ function unlockSpecificContact(contactNum){
 
 	var z = document.getElementsByClassName('contact-div') ;
 	z[contactNum].classList.remove("no-call") ;
+	var tempOnClickFunc = z[contactNum].getAttribute("onclick");
+	console.log(tempOnClickFunc);
+	tempOnClickFunc = tempOnClickFunc.replace("no-call", "callable");
+	z[contactNum].setAttribute("onclick",tempOnClickFunc) ;
 }
 
 function lockContacts(){
@@ -377,9 +369,9 @@ function createContact(contact, parent){
 	/*NK ICI SI TXT OU PAS*/
 	if(contact.canal == "video"){
 		if(isLocal === true){
-			x.setAttribute("onclick","openVideoWindow('"+contact.vid+"', '"+contactVideoRoot+contact.vid+"/')") ;
+			x.setAttribute("onclick","openVideoWindow('"+contact.vid+"', '"+contactVideoRoot+contact.vid+"/', 'no-call')") ;
 		}else{
-			x.setAttribute("onclick","openVideoWindow('"+contact.vid+"', '"+videoRootVOD+"/"+contact.vod_folder+"')") ;
+			x.setAttribute("onclick","openVideoWindow('"+contact.vid+"', '"+videoRootVOD+"/"+contact.vod_folder+"', 'no-call')") ;
 		}
 	}else if(contact.canal == "txt"){
 		x.setAttribute("onclick","openContactTxTWindow('"+contact.vid+"', '"+contactVideoRoot+contact.vid+"/"+contact.bigAvatar+"')") ;
@@ -523,12 +515,13 @@ function openContactTxTWindow(vid, bigAvatarHelper){
 }
 
 /*open/close video windows*/
-function openVideoWindow(vid, vid_folder){
+function openVideoWindow(vid, vid_folder, classname){
 	var x = document.getElementById("callVideo-content") ;
 	var t = document.getElementById("callVideo-title") ;
 	
 	var title ;
 	var src ;
+	console.log(mainHintFound);
 	/*according to case, deal with title and video path*/
 	if(vid == "intro" || vid == "introBis"){
 		title = titleData.introTitle ;
@@ -544,7 +537,8 @@ function openVideoWindow(vid, vid_folder){
 		var cl = document.getElementById("btn-closecall") ;
 		cl.addEventListener("click", callbackCloseMissingCall) ;
 	}else{
-		if(mainHintFound){
+		if(mainHintFound || !classname.includes('no-call')){
+			var z = document.getElementsByClassName('contact-div') ;
 			title = titleData.callTitle ;
 			src = vid_folder+"seq"+sequenceNumber+".mp4" ;
 			document.getElementById('divcontact-'+vid).classList.add("already-called") ;
@@ -553,6 +547,8 @@ function openVideoWindow(vid, vid_folder){
 			openIt('nocall-window') ;
 			return;
 		}
+
+
 	}
 
 	TinyStato.logThis(12, "playvideo", vid, sequenceNumber) ;
