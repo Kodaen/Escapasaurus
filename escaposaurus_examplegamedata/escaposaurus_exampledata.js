@@ -19,7 +19,7 @@
  		var videoRoot = gameDataRoot+"videos/" ;
 
  		/*caller app*/
-		var contactVideoRoot = videoRoot+"contactVideo/" ;
+		var contactVideoRoot = videoRoot+"contactVideo2/" ;
 
 		/*full path to intro / outro video*/
 		var missionVideoPath = videoRoot+"introVideo/intro1.mp4" ;
@@ -28,36 +28,64 @@
 		var epilogueVideoPath = videoRoot+"epilogueVideo/epiloguecredit.mp4" ;
 
 		/*udisk JSON path*/
-		var udiskRoot = gameDataRoot+"udisk/" ;
+		var udiskRoot = gameDataRoot+"arborescense/" ;
 
 		/*for online use only*/
 		/*var udiskJSONPath = gameRoot+"escaposaurus_gamedata/udisk.json" ;
 		var udiskJSONPath = "/helper_scripts/accessJSON_udisk.php" ;*/
 
+
+		// var udiskData =
+	  	// {"root":{
+	  	// 	"folders":
+		//   		[
+		//   		{"foldername":"gaming",
+		// 		  	"files":["20190509_316504.mp4"]
+		// 		},
+		// 		{"foldername":"vieillescartespostales",
+		// 				"files":["carte1.jpg", "carte2.jpg", "carte3.jpg", "carte4.jpg"]
+		// 		},
+		// 		{"foldername":"dcim","password":"forclaz","sequence":1,
+		// 	  		"files":["20180807_103031.jpg", "20180807_114356.jpg", "20180807_123538.mp4"]
+		// 	  	},
+		// 	  	{"foldername":"itineraire2018",
+		// 	  		"folders":[{"foldername":"perso", "files":["FXHT4438a.jpg","Screenshot20180701_Wanderplaner(1).jpg"],"password":"nata","sequence":0}]
+		// 	  	},
+		// 	  	{"foldername":"itineraire2019", "password":"trient","sequence":2,
+		// 	  		"files":["fortnitescreen.png", "swisstopo-screen.png"],
+		// 	  		"folders":[{"foldername":"GPS", "files":["idgps.png"],"password":"wandfluehorn","sequence":3}]
+		// 	  	}
+		//  		],
+		// 	"files":[
+		// 		"scan_memo.png"]}
+		// } ;
+
 		var udiskData =
-	  	{"root":{
-	  		"folders":
-		  		[
-		  		{"foldername":"gaming",
-				  	"files":["20190509_316504.mp4"]
+		{"root":{
+			"folders":
+				[
+
+
+				{"foldername":"Salon",
+					"files":["Tableau cloche.png", "Tableau Louis XVI.png"],
+					"folders":[	{"foldername":"Buffet", "files":["Tract Jeanne.png"]},
+								{"foldername":"Coffre", "files":["Clef.png"],"password":"78443","sequence":0},
+				]
 				},
-				{"foldername":"vieillescartespostales",
-						"files":["carte1.jpg", "carte2.jpg", "carte3.jpg", "carte4.jpg"]
+
+
+				{"foldername":"Cabinet","password":"CLEF","sequence":1, //Pour l'instant c'est un mdp mais il faut que ça se dévérouille tout seul avec la clef
+						"files":["Tableau piece.png", "Tableau reunion.png", "tapis.png"],
+						"folders":[	{"foldername":"Bibliothèque", "files":["Article journal.png", "Tract anti revolutionnaire.png"]},
+									{"foldername":"Bureau", "files":["Cheque.png", "Livre code.png"]},
+									{"foldername":"Coffre fort", "password":"110775","sequence":2, "files":["Agenda.png", "Carte Paris.png", "Coffre fort.jpg", "livre de compte.png", "LETTRE-GOURGUECHON.mp4"]}]
 				},
-				{"foldername":"dcim","password":"forclaz","sequence":1,
-			  		"files":["20180807_103031.jpg", "20180807_114356.jpg", "20180807_123538.mp4"]
-			  	},
-			  	{"foldername":"itineraire2018",
-			  		"folders":[{"foldername":"perso", "files":["FXHT4438a.jpg","Screenshot20180701_Wanderplaner(1).jpg"],"password":"nata","sequence":0}]
-			  	},
-			  	{"foldername":"itineraire2019", "password":"trient","sequence":2,
-			  		"files":["fortnitescreen.png", "swisstopo-screen.png"],
-			  		"folders":[{"foldername":"GPS", "files":["idgps.png"],"password":"wandfluehorn","sequence":3}]
-			  	}
-		 		],
-			"files":[
-				"scan_memo.png"]}
+				{"foldername" :"Sortie","password":"EGLISE","sequence":3, "files":"","folders":""}
+			   ],
+			
+			"files":""}
 		} ;
+
 
 		var gameTitle = "Jeanne ou l'indépendance de la femme" ;
 		var gameDescriptionHome = "Cette histoire relate le meurtre de Jeanne et la disparition de la déclaration des droits de la femme et de la citoyenne.<br/>Le code source est téléchargeable sur <a href='https://github.com/RedNaK/escaposaurus' target='_blank'>GitHub</a>" ;
@@ -87,7 +115,7 @@
 		prompt[4] = "" ;
 
 		/*when the sequence number reach this, the player win, the missing contact is added and the player can call them*/
-		var sequenceWin = 3 ;
+		var sequenceWin = 4 ;
 
 		/*before being able to call the contacts, the player has to open the main clue of the sequence as indicated in this array*/
 		/*if you put in the string "noHint", player will be able to immediatly call the contact at the beginning of the sequence*/
@@ -102,8 +130,11 @@
 	their img need to be placed in their video folder, username is their displayed name
 		*/
 		var normalContacts = [] ;
-		normalContacts[0] = {"vid" : "Denise", "vod_folder" : "", "username" : "Denise (guide)", "canal" : "video", "avatar" : "denise_avatar.jpg"} ;
-		normalContacts[1] = {"vid" : "Nathalie", "vod_folder" : "", "username" : "Nathalie (guide)", "canal" : "video", "avatar" : "nata_avatar.jpg"} ;
+		normalContacts[0] = {"vid" : "Madeleine", "vod_folder" : "", "username" : "Madeleine (club)", "canal" : "video", "avatar" : "Madeleine.jpg"} ;
+		normalContacts[1] = {"vid" : "Marie", "vod_folder" : "", "username" : "Marie (club)", "canal" : "video", "avatar" : "Marie.jpg"} ;
+		normalContacts[2] = {"vid" : "Isaac", "vod_folder" : "", "username" : "Isaac (marie)", "canal" : "video", "avatar" : "Isaac.jpg"} ;
+		// normalContacts[0] = {"vid" : "Denise", "vod_folder" : "", "username" : "Denise (guide)", "canal" : "video", "avatar" : "denise_avatar.jpg"} ;
+		// normalContacts[1] = {"vid" : "Nathalie", "vod_folder" : "", "username" : "Nathalie (guide)", "canal" : "video", "avatar" : "nata_avatar.jpg"} ;
 
 		/*second part of the list, contact that can help the player*/
 		var helperContacts = [] ;
@@ -112,7 +143,7 @@
 
 
 		/*ce qui apparait quand on trouve le dernier élément du disque dur*/
-		finalStepAdded = "ID du GPS transmise aux secours." ;
+		finalStepAdded = "Vous allez à l'Eglise, et retrouvez Isaac." ;
 
 		/*the last call, it can be the person we find in the end or anyone else we call to end the quest, allows the game to know it is the final contact that is called and to proceed with the ending*/
 		var missingContact = {"vid" : "missing", "vod_folder" : "","username" : "Nathalie",  "canal" : "video", "avatar" : "nata_avatar.jpg"} ;
