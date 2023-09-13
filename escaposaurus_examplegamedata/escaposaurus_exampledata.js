@@ -59,12 +59,12 @@
 				"scan_memo.png"]}
 		} ;
 
-		var gameTitle = "Escaposaurus Scenario Exemple" ;
-		var gameDescriptionHome = "Ceci est une courte aventure d'exemple pour montrer ce que le framework Escaposaurus permet facilement de réaliser.<br/>Le code source est téléchargeable sur <a href='https://github.com/RedNaK/escaposaurus' target='_blank'>GitHub</a>" ;
-		var gameMissionCall = "Voici la vidéo qu'Albert a envoyé à votre bureau d'informaticien spécialisé en récupération de données" ;
-		var gameMissionAccept = "&raquo;&raquo; Accepter la mission et charger la clé USB dans le serveur virtuel (JOUER) &laquo;&laquo;" ;
+		var gameTitle = "Jeanne ou l'indépendance de la femme" ;
+		var gameDescriptionHome = "Cette histoire relate le meurtre de Jeanne et la disparition de la déclaration des droits de la femme et de la citoyenne.<br/>Le code source est téléchargeable sur <a href='https://github.com/RedNaK/escaposaurus' target='_blank'>GitHub</a>" ;
+		var gameMissionCall = "Madeleine s'approche de vous, éplorée." ;
+		var gameMissionAccept = "&raquo;&raquo; Commencer votre investigation en commençant par fouiller la pièce (JOUER) &laquo;&laquo;" ;
 
-		var gameCredit = "Un jeu conçu et réalisé par : <br/>Stéphanie Mader" ;
+		var gameCredit = "Un jeu conçu et réalisé par : <br/>Tristan Badana<br/>Gaïa Broilliard<br/>Léa Docteur<br/>Frédéric Kukovicic<br/>Gabrielle Laty<br/>Margot Thetiot" ; 
 		var gameThanks = "Remerciements : <br/> ;)" ;
 
 		var OSName = "Special InformaticienOS 3.11- diskloaded: Escaposaurus_Example" ;
@@ -75,19 +75,19 @@
 		var titleData = {} ;
 		titleData.introTitle = "INTRODUCTION" ;
 		titleData.epilogueTitle = "EPILOGUE" ;
-		titleData.callTitle = "APPEL EN COURS..." ;
+		titleData.callTitle = "Quelqu'un vous interpelle" ;
 
 		/*change of caller app prompt for each sequence*/
-		var promptDefault = "Rien à demander, ne pas les déranger." ;
+		var promptDefault = "Vous observe sans bouger" ;
 		var prompt = [] ;
-		prompt[0] = "Prendre contact" ;
+		prompt[0] = "souhaitent vous parler" ;
 		prompt[1] = "" ;
 		prompt[2] = "" ;
-		prompt[3] = "Envoyer la carte" ;
-		prompt[4] = "Appeler Nathalie pour savoir où en sont les secours." ;
+		prompt[3] = "" ;
+		prompt[4] = "" ;
 
 		/*when the sequence number reach this, the player win, the missing contact is added and the player can call them*/
-		var sequenceWin = 4 ;
+		var sequenceWin = 3 ;
 
 		/*before being able to call the contacts, the player has to open the main clue of the sequence as indicated in this array*/
 		/*if you put in the string "noHint", player will be able to immediatly call the contact at the beginning of the sequence*/
