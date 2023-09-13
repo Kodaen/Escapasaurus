@@ -611,6 +611,18 @@ function closeIt(nameId){
 /*progression, beggining, and end specific event*/
 function changingSequence(){
 	sequenceNumber++ ;
+	var background = document.getElementById("main-container");
+	
+
+	switch (sequenceNumber) {
+		case 1:
+			background.style.backgroundImage = "url(escaposaurus_examplegamedata/img/background2.jpg)";
+			break;
+		case 3:
+			background.style.backgroundImage = "url(escaposaurus_examplegamedata/img/background1.jpg)";
+		default:
+			break;
+	}
 
 	if(sequenceNumber >= sequenceWin){
 		TinyStato.logThis(2, "win", "", sequenceNumber) ;
