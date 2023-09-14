@@ -89,7 +89,7 @@
 						<div id="normal-contact" class="contact-list">
 						</div>
 						<div id="callApp-help">
-							Si besoin d'aide et d'indice pour trouver un mot de passe.
+							Si besoin d'aide et d'indice pour avancer.
 						</div>
 						<div id="help-contact" class="contact-list">
 						</div>
@@ -165,7 +165,7 @@
 
 	<!-- NOUVEAU CONTACT -->
 	<div id="newContact-window" class="hidden">
-		<div class="app-title"><span class="app-title-span">MESSAGE</span></div>
+		<div class="app-title"><span class="app-title-span">...</span></div>
 		<div class="message-content">
 			<br/>
 			<span id="added"></span><br/>
@@ -202,9 +202,25 @@
 			</div>
 		</div>
 
+		
+	<!-- FIN DU JEU -->
+	<div id="end-window" class="hidden">
+		<div class="app-title"><span class="app-title-span">FELICITATIONS</span></div>
+		<div class="message-content">
+			<img id="callerIMG" />
+			<p>
+				<br/>
+				Félicitations, tu as réussi à récupérer la déclaration des droits de la femme et de la citoyenne qu'Isaac<br/>
+				avait volé à Jeanne ! Grâce à toi, nous avons pu imprimer des tracts et les distribuer à toutes les femmes<br/>
+				et hommes de la capitale et du pays ! L'histoire se souviendra de toi, Marguerite.<br/>
+			</p>
+			<button class="window-btn" onclick="closeAppelEntrant('calling-window')">Lire la lettre</button>
+		</div>
+	</div>
+
 	<!-- MESSAGE DE LOU -->
 	<div id="message-window" class="hidden">
-		<div class="app-title"><span class="app-title-span">MESSAGE</span></div>
+		<div class="app-title"><span class="app-title-span">PENSEES</span></div>
 		<div class="message-content">
 			<img  id="caller2IMG" /><br/>
 			<span id="tips-content"></span><br/>

@@ -110,7 +110,7 @@
 
 		/*second part of the list, contact that can help the player*/
 		var helperContacts = [] ;
-		helperContacts[0] = {"vid" : "Albert", "vod_folder" : "", "username" : "Albert (pour avoir un indice)", "canal" : "txt", "avatar" : "albert.png", "bigAvatar" : "albertbig.png"} ;
+		helperContacts[0] = {"vid" : "Albert", "vod_folder" : "", "username" : "Pensées de Marguerite (pour avoir un indice)", "canal" : "txt", "avatar" : "albert.png", "bigAvatar" : "albertbig.png"} ;
 		/*helperContacts[1] = {"vid" : "Lou", "username" : "Lou (pour avoir un deuxième indice) - par message", "canal" : "txt", "avatar" : "Lou_opt.jpg", "bigAvatar" : "avatarHelper2Big.gif"} ;*/
 
 
@@ -123,8 +123,8 @@
 		/*Lou only send text message, they are stored here*/
 		var tips = {} ;
 		tips['Albert'] = [] ;
-		tips['Albert'][0] = "4 lieux..." ;
-		tips['Albert'][1] = "4 lieux..." ;
+		tips['Albert'][0] = "" ;
+		tips['Albert'][1] = "" ;
 		tips['Albert'][2] = "4 lieux..." ;
 		tips['Albert'][3] = "" ;
 
