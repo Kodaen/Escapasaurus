@@ -19,6 +19,7 @@ var winState = false ;
 var mainHintFound = false ;
 var gameStart = false ;
 var postEpilogue = false;
+var hintfound = false;
 
 
 /*
@@ -160,20 +161,32 @@ var callbackClicHint = function(evt){
 		console.log("fn : " + fn);
 	}
 
+
 	if(fn == seqMainHint[sequenceNumber] || fn == "Coffre fortsp" || fn == "Tableau%20piece.png"){
 		switch (fn) {
 			case "Article%20journal.png":
-				mainHintFound = true;
-				unlockSpecificContact(1);
+				if (hintfound) {
+					mainHintFound = true;
+					unlockContacts();
+				} else {
+					hintfound = true;
+					unlockSpecificContact(0);
+				}
 				break;
 
-				case "Tableau%20piece.png":
-					// var hiddenArticle = document.getElementById("Article journal.png");
-					// hiddenArticle.style.contentVisibility = "visible";
-					break;
+				// case "Tableau%20piece.png":
+				// 	// var hiddenArticle = document.getElementById("Article journal.png");
+				// 	// hiddenArticle.style.contentVisibility = "visible";
+				// 	break;
 
 				case "Coffre fortsp":
-					unlockSpecificContact(0);
+					if (hintfound) {
+						mainHintFound = true;
+						unlockContacts();
+					} else {
+						hintfound = true;
+						unlockSpecificContact(0);
+					}
 					break;
 
 			default:

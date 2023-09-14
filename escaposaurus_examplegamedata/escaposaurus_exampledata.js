@@ -123,9 +123,9 @@
 		/*Lou only send text message, they are stored here*/
 		var tips = {} ;
 		tips['Albert'] = [] ;
-		tips['Albert'][0] = "" ;
-		tips['Albert'][1] = "" ;
-		tips['Albert'][2] = "" ;
+		tips['Albert'][0] = "Pourquoi avoir marqué S.O.N.N.E à côté du dessin de la boussole? Ces lettres ont-elles une autre signification ? On retrouve aussi la boussole sur le tableau de Louis XVI..." ;
+		tips['Albert'][1] = "Isaac était visiblement contre la révolution. Cela veut dire qu'il a dû utiliser l'ancien calendrier commençant avec la naissance de Jesus Christ pour vérouiller ce coffre..." ;
+		tips['Albert'][2] = "Aujourd'hui nous somme le Samedi 6, cela veut dire qu'Isaac est censé rejoindre le Père Gourguechon d'après son agenda mais il a chiffé l'endroit du rendez-vous... Mais qu'elle est la clef pour déchiffrer ce code..." ;
 		tips['Albert'][3] = "" ;
 
 
