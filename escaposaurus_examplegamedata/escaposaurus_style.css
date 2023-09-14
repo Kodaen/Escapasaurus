@@ -2,7 +2,7 @@
 /////////////////////////////////////////////////////////////
 /// Escapausorus v1 (2020)
 ///	A quick and dirty framework to create small adventure game (certified vanilla JS)
-/// Author: StÃƒÂ©phanie Mader (http://smader.interaction-project.net)
+/// Author: StÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©phanie Mader (http://smader.interaction-project.net)
 /// GitHub: https://github.com/RedNaK/escaposaurus
 ///	Licence: MIT
 ////////////////////////////////////////////////////////////
@@ -36,7 +36,6 @@ video{max-width: 960px;}
 	max-height:800px;
 	margin: auto;
 	height:100%;
-	border:1px solid #1022CC;
 	text-align: center;
 	position:relative;
 	background: url(img/salon.jpeg);
@@ -75,7 +74,7 @@ video{max-width: 960px;}
 	/* font-weight: bold; */
 	padding:5px;
 	/* background-color:#1022CC; */
-	background-image: url(img/EntÃƒÂªte.jpg);
+	background-image: url(img/EntÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âªte.jpg);
 	background-repeat: no-repeat;
 	font-family: KoPub Batang;
 }
@@ -167,7 +166,7 @@ video{max-width: 960px;}
 /* udisk app*/
 #folderApp{
 	width:450px;
-	height:650px;
+	height: 93%;
 	overflow: auto;
 	padding:0 0 0 0;
 	margin:50 0 0 150;
