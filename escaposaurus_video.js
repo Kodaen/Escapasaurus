@@ -711,7 +711,7 @@ function win(){
 	var hc = document.getElementById("help-contact") ;
 	while (hc.firstChild) {
 		hc.removeChild(hc.lastChild);
-	}
+	}	
 }
 
 function closeNewContact(d){
