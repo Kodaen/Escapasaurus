@@ -299,7 +299,6 @@ function cFolder(name, parent, password, seqNumber, helpText){
 		img.src = "escaposaurus_examplegamedata/img/" + name + ".png";
 
 		img.onerror = function () { // Failed to load
-			console.log("failed");
 			elemA.setAttribute("style", "background : url('escaposaurus_examplegamedata/img/iconPassword.png')left center no-repeat");
 		};
 		img.onload = function () { // Loaded successfully
@@ -314,7 +313,6 @@ function cFolder(name, parent, password, seqNumber, helpText){
 		img.src = "escaposaurus_examplegamedata/img/"+ name + ".png";
 		
 		img.onerror = function(){ // Failed to load
-			console.log("failed");
 			elemA.setAttribute("style", "background : url('escaposaurus_examplegamedata/img/iconFolder.png')left center no-repeat") ;
 		};
 		img.onload = function(){ // Loaded successfully
@@ -361,7 +359,6 @@ function cFile(name, parent, fullPath){
 	img.src = "escaposaurus_examplegamedata/img/"+ name;
 	
 	img.onerror = function(){ // Failed to load
-		console.log("failed");
 		elemA.setAttribute("style", "background : url('escaposaurus_examplegamedata/img/iconFile.png')left center no-repeat") ;
 	};
 	img.onload = function(){ // Loaded successfully
@@ -462,7 +459,6 @@ function unlockFolder(unlockedFolder){
 	img.src = "escaposaurus_examplegamedata/img/" + unlockedFolder + ".png";
 
 	img.onerror = function () { // Failed to load
-		console.log("failed");
 		x.setAttribute("style", "background : url('escaposaurus_examplegamedata/img/iconFolder.png')left center no-repeat");
 	};
 	img.onload = function () { // Loaded successfully
