@@ -49,7 +49,7 @@
 						"files":["Tableau piece.png", "Tableau reunion.png", "tapis.png"],
 						"folders":[	{"foldername":"Bibliothèque", "files":["Article journal.png", "Tract anti revolutionnaire.png"]},
 									{"foldername":"Bureau", "files":["Cheque.png", "Livre code.png"]},
-									{"foldername":"Coffre fort", "password":"110775","sequence":1,"helptext":"Fermé par un cadenas 6 chiffres", "files":["Agenda.png", "Carte Paris.png", "Coffre fort.jpg", "livre de compte.png", "LETTRE-GOURGUECHON.mp4"]}]
+									{"foldername":"Coffre fort", "password":"110675","sequence":1,"helptext":"Fermé par un cadenas 6 chiffres", "files":["Agenda.png", "Carte Paris.png", "Coffre fort.jpg", "livre de compte.png", "LETTRE-GOURGUECHON.mp4"]}]
 				},
 				{"foldername" :"Sortie","password":"EGLISE","sequence":2, "helptext" : "Où voulez vous partir ?","files":"","folders":""}
 			   ],
@@ -68,7 +68,7 @@
 
 		var OSName = "_" ;
 		var explorerName = "MAISON DE JEANNE" ;
-		var callerAppName = "PARLER" ;
+		var callerAppName = "AUTOUR DE VOUS" ;
 
 		/*titles of video windows*/
 		var titleData = {} ;
@@ -92,7 +92,7 @@
 		/*if you put in the string "noHint", player will be able to immediatly call the contact at the beginning of the sequence*/
 		/*if you put "none" or anything that is not an existing filename, the player will NOT be able to call the contacts during this sequence*/
 		var seqMainHint = [] ;
-		seqMainHint[0] = "noHint" ;
+		seqMainHint[0] = "Tableau%20Louis%20XVI.png" ;
 		seqMainHint[1] = "Article%20journal.png" ; /*if you put anything that is not an existing filename of the udisk, the player will never be able to call any contacts or get helps during this sequence*/
 		seqMainHint[2] = "Agenda.png" ;
 		seqMainHint[3] = "noHint" ;
@@ -118,13 +118,13 @@
 		finalStepAdded = "Vous allez à l'Eglise et retrouvez Isaac." ;
 
 		/*the last call, it can be the person we find in the end or anyone else we call to end the quest, allows the game to know it is the final contact that is called and to proceed with the ending*/
-		var missingContact = {"vid" : "Isaac", "vod_folder" : "", "username" : "Isaac (marie)", "canal" : "video", "avatar" : "Isaac.jpg"} ;
+		var missingContact = {"vid" : "Isaac", "vod_folder" : "", "username" : "Mari de Jeanne (Isaac)", "canal" : "video", "avatar" : "Isaac.jpg"} ;
 
 		/*Lou only send text message, they are stored here*/
 		var tips = {} ;
 		tips['Albert'] = [] ;
-		tips['Albert'][0] = "" ;
-		tips['Albert'][1] = "" ;
+		tips['Albert'][0] = "4 lieux..." ;
+		tips['Albert'][1] = "4 lieux..." ;
 		tips['Albert'][2] = "4 lieux..." ;
 		tips['Albert'][3] = "" ;
 
