@@ -18,6 +18,7 @@ var sequenceNumber = 0 ;
 var winState = false ;
 var mainHintFound = false ;
 var gameStart = false ;
+var postEpilogue = false;
 
 
 /*
@@ -587,7 +588,6 @@ function openVideoWindow(vid, vid_folder, classname){
 	
 	var title ;
 	var src ;
-	console.log(mainHintFound);
 	/*according to case, deal with title and video path*/
 	if(vid == "intro" || vid == "introBis"){
 		title = titleData.introTitle ;
@@ -654,8 +654,13 @@ function openIt(nameId){
 function closeIt(nameId){
 	var mainOElt = document.getElementById(nameId);
 	mainOElt.classList.add('hidden') ;
+	if (postEpilogue == true) {
+		console.log("Post Epilogue");
+		var endScreen = document.getElementById('background-black');
+		endScreen.classList.remove('hidden');
+		postEpilogue = false;
 
-	console.log(nameId);
+	}
 	/* need a callback on animation to work
 	mainOElt.style.animation = [animation.scaleOut, animation.fadeOut];
 	setTimeout(function () {
@@ -745,6 +750,7 @@ function openEpilogue(){
 		var x = document.getElementById('button-outro');
 		x.style.animation = [animation.scaleIn, animation.fadeIn];
 		x.classList.remove('hidden');
+		postEpilogue = true;
 	},10);
 }
 

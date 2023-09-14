@@ -204,19 +204,22 @@
 
 		
 	<!-- FIN DU JEU -->
-	<div id="end-window" class="hidden">
-		<div class="app-title"><span class="app-title-span">FELICITATIONS</span></div>
-		<div class="message-content">
-			<img id="callerIMG" />
-			<p>
-				<br/>
-				Félicitations, tu as réussi à récupérer la déclaration des droits de la femme et de la citoyenne qu'Isaac<br/>
-				avait volé à Jeanne ! Grâce à toi, nous avons pu imprimer des tracts et les distribuer à toutes les femmes<br/>
-				et hommes de la capitale et du pays ! L'histoire se souviendra de toi, Marguerite.<br/>
-			</p>
-			<button class="window-btn" onclick="closeAppelEntrant('calling-window')">Lire la lettre</button>
+	<div id="background-black", class="hidden", style="position: absolute; top: 1; background-color: #000000bf; width: 100%; height: 100%;">
+		<div id="end-window">
+			<div class="app-title"><span class="app-title-span">FELICITATIONS</span></div>
+			<div class="message-content">
+				<p>
+					<br/>
+					Félicitations, tu as réussi à récupérer la déclaration des droits de la femme et de la citoyenne qu'Isaac
+					avait volé à Jeanne ! <br/>
+					Grâce à toi, nous avons pu imprimer des tracts et les distribuer à toutes les femmes et hommes de la capitale et du pays ! <br/>
+					<br/><br/>
+					L'histoire se souviendra de toi, Marguerite.
+				</p>
+			</div>
 		</div>
 	</div>
+
 
 	<!-- MESSAGE DE LOU -->
 	<div id="message-window" class="hidden">
@@ -232,7 +235,7 @@
 	<div id="nocall-window" class="hidden">
 		<div class="app-title"><span class="app-title-span">...</span></div>
 		<div class="message-content">
-			Cette personne ne souhaite pas discuter avec vous pour le moment<br/>
+			Cette personne n'a rien à dire pour le moment<br/>
 			<button class="window-btn" onclick="closeIt('nocall-window')">Fermer</button>
 		</div>
 	</div>
