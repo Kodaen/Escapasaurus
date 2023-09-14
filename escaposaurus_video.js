@@ -127,8 +127,8 @@ function loadGame(folders, files, overlay){
 	}
 
 	//Hard coded because why not
-	var hiddenArticle = document.getElementById("Article journal.png");
-	hiddenArticle.style.contentVisibility = "hidden";
+	// var hiddenArticle = document.getElementById("Article journal.png");
+	// hiddenArticle.style.contentVisibility = "hidden";
 }
 
 
@@ -167,8 +167,8 @@ var callbackClicHint = function(evt){
 				break;
 
 				case "Tableau%20piece.png":
-					var hiddenArticle = document.getElementById("Article journal.png");
-					hiddenArticle.style.contentVisibility = "visible";
+					// var hiddenArticle = document.getElementById("Article journal.png");
+					// hiddenArticle.style.contentVisibility = "visible";
 					break;
 
 				case "Coffre fortsp":

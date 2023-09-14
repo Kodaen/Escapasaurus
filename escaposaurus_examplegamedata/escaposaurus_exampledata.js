@@ -41,17 +41,17 @@
 				[
 				{"foldername":"Salon",
 					"files":["Tableau cloche.png", "Tableau Louis XVI.png"],
-					"folders":[	{"foldername":"Buffet", "files":["Tract Jeanne.png"]}
+					"folders":[	{"foldername":"Buffet", "files":["Reclamation des femmes.png"]}
 				]
 				},
 
 				{"foldername":"Cabinet","password":"78443","sequence":0, "helptext":"Fermé par un cadenas 5 chiffres", //Pour l'instant c'est un mdp mais il faut que ça se dévérouille tout seul avec la clef
-						"files":["Tableau piece.png", "Tableau reunion.png", "tapis.png"],
-						"folders":[	{"foldername":"Bibliothèque", "files":["Article journal.png", "Tract anti revolutionnaire.png"]},
-									{"foldername":"Bureau", "files":["Cheque.png", "Livre code.png"]},
-									{"foldername":"Coffre fort", "password":"110675","sequence":1,"helptext":"Fermé par un cadenas 6 chiffres", "files":["Agenda.png", "Carte Paris.png", "Coffre fort.jpg", "livre de compte.png", "LETTRE-GOURGUECHON.mp4"]}]
+						"files":["Tableau piece.png"],
+						"folders":[	{"foldername":"Bibliothèque", "files":["Article journal.png", "Affiche anti revolutionnaire.png"]},
+									{"foldername":"Bureau", "files":["Cheque.png"]},
+									{"foldername":"Coffre fort", "password":"110675","sequence":1,"helptext":"Fermé par un cadenas 6 chiffres", "files":["Agenda.png", "Carte Paris.png", "livre de compte.png", "LETTRE-GOURGUECHON.mp4", "Livre code.png"]}]
 				},
-				{"foldername" :"Sortie","password":"EGLISE","sequence":2, "helptext" : "Où voulez vous partir ?","files":"","folders":""}
+				{"foldername" :"Aller chercher le tract","password":"EGLISE","sequence":2, "helptext" : "Où voulez vous partir ?","files":"","folders":""}
 			   ],
 			
 			"files":""}
