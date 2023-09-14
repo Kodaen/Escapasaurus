@@ -659,7 +659,7 @@ function closeIt(nameId){
 	var mainOElt = document.getElementById(nameId);
 	mainOElt.classList.add('hidden') ;
 
-
+	console.log(nameId);
 	/* need a callback on animation to work
 	mainOElt.style.animation = [animation.scaleOut, animation.fadeOut];
 	setTimeout(function () {
