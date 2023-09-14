@@ -125,7 +125,7 @@
 		tips['Albert'] = [] ;
 		tips['Albert'][0] = "" ;
 		tips['Albert'][1] = "" ;
-		tips['Albert'][2] = "" ;
+		tips['Albert'][2] = "4 lieux..." ;
 		tips['Albert'][3] = "" ;
 
 
