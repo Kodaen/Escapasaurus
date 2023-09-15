@@ -126,7 +126,7 @@
 		tips['Albert'][0] = "Pourquoi avoir marqué S.O.N.N.E à côté du dessin de la boussole? Ces lettres ont-elles une autre signification ? On retrouve aussi la boussole sur le tableau de Louis XVI..." ;
 		tips['Albert'][1] = "Isaac était visiblement contre la révolution. Cela veut dire qu'il a dû utiliser l'ancien calendrier commençant avec la naissance de Jesus Christ pour vérouiller ce coffre..." ;
 		tips['Albert'][2] = "D'après son agenda, Isaac est censé rejoindre le Père Gourguechon aujourd'hui, mais il a chiffé l'endroit du rendez-vous... Mais quelle est la clé pour déchiffrer ce code..." ;
-		tips['Albert'][3] = "" ;
+		tips['Albert'][3] = "" ; 
 
 
 		/*text for the instruction / solution windows*/
