@@ -125,13 +125,13 @@
 		tips['Albert'] = [] ;
 		tips['Albert'][0] = "Pourquoi avoir marqué S.O.N.N.E à côté du dessin de la boussole? Ces lettres ont-elles une autre signification ? On retrouve aussi la boussole sur le tableau de Louis XVI..." ;
 		tips['Albert'][1] = "Isaac était visiblement contre la révolution. Cela veut dire qu'il a dû utiliser l'ancien calendrier commençant avec la naissance de Jesus Christ pour vérouiller ce coffre..." ;
-		tips['Albert'][2] = "Aujourd'hui nous somme le Samedi 6, cela veut dire qu'Isaac est censé rejoindre le Père Gourguechon d'après son agenda mais il a chiffé l'endroit du rendez-vous... Mais qu'elle est la clef pour déchiffrer ce code..." ;
+		tips['Albert'][2] = "D'après son agenda, Isaac est censé rejoindre le Père Gourguechon aujourd'hui, mais il a chiffé l'endroit du rendez-vous... Mais qu'elle est la clé pour déchiffrer ce code..." ;
 		tips['Albert'][3] = "" ;
 
 
 		/*text for the instruction / solution windows*/
 		var instructionText = {} ;
-		instructionText.winState = "Vous avez retrouvé l'id GPS et vous pouvez appeler les secours du secteur." ;
+		instructionText.winState = "Vous avez retrouvé la lettre et résolu l'affaire." ;
 		instructionText.lackMainHint = "" ;
 		instructionText.password = "Vous devez trouver et entrer le mot de passe d'un des dossiers de la boite de droite. Vous pouvez trouver le mot de passe en appelant les contacts de la boite de gauche.<br/>Pour entrer un mot de passe, cliquez sur le nom d'un dossier et une fenêtre s'affichera pour que vous puissiez donner le mot de passe." ;
 
